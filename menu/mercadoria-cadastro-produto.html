@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - Cadastro de Produto</title>
+    <link rel="stylesheet" href="style-mercadoria-cadastro-produto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="assets/perfilonlinejoao.png" alt="Avatar" class="avatar">
+                <div class="user-info">
+                    <div class="user-name">0001 - JOÃO</div>
+                    <div class="user-email">joao@gmail.com</div>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="menu-item"><a href="inicio.html"><i class="fas fa-home"></i> INÍCIO</a></li>
+
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-users"></i> CLIENTES<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-cliente.html">NOVO CLIENTE</a></li>
+                            <li class="submenu-item"><a href="consultar-clientes.html">CONSULTAR CLIENTES</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-box"></i> PEDIDOS<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-pedido.html">NOVO PEDIDO</a></li>
+                            <li class="submenu-item"><a href="consultar-pedidos.html">CONSULTAR PEDIDOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="estoque.html"><i class="fas fa-warehouse"></i> ESTOQUE</a></li>
+                    <li class="menu-item"><a href="painel-de-vendas.html"><i class="fas fa-chart-bar"></i> PAINEL DE VENDA</a></li>
+                    <li class="menu-item has-submenu expanded active">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-shopping-cart"></i> MERCADORIA<i class="fas fa-chevron-up submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="mercadoria-consulta.html">CONSULTA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro.html">CADASTRO DE MERCADORIA</a></li>
+                            <li class="submenu-item active"><a href="mercadoria-cadastro-produto.html">CADASTRO DE PRODUTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="avisos.html"><i class="fas fa-bell"></i> AVISOS</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="logo-placeholder">
+                    <img src="assets/peixetopbar.png">
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="BUSCAR">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <i class="fas fa-bell icon-action"></i>
+                    <i class="fas fa-cog icon-action"></i>
+                    <a href="#" class="logout-btn">SAIR</a>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">MERCADORIA / CADASTRO DE MERCADORIA</div>
+
+                <!-- Form Container -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <div class="form-group">
+                            <label for="produto">PRODUTO</label>
+                            <select id="produto" name="produto">
+                                <option value="">Selecione um produto</option>
+                                <option value="tilapia">TILÁPIA INTEIRA CONGELADA</option>
+                                <option value="lagosta">LAGOSTA (GRANEL)</option>
+                                <option value="salmao">SALMÃO INTEIRO CONGELADO</option>
+                                <option value="camarao">CAMARÃO SEM CABEÇA (GRANEL/PACOTE)</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-adicionar" id="btnAdicionar">ADICIONAR</button>
+                    </div>
+
+                    <!-- Products List -->
+                    <div class="products-list">
+                        <div class="product-item">
+                            <div class="product-code">CÓDIGO</div>
+                            <div class="product-name">PRODUTO</div>
+                        </div>
+
+                        <div class="product-item" data-code="0101">
+                            <div class="product-code">0101</div>
+                            <div class="product-name">
+                                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                TILÁPIA INTEIRA CONGELADA
+                            </div>
+                        </div>
+
+                        <div class="product-item" data-code="0102">
+                            <div class="product-code">0102</div>
+                            <div class="product-name">
+                                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                LAGOSTA (GRANEL)
+                            </div>
+                        </div>
+
+                        <div class="product-item" data-code="0103">
+                            <div class="product-code">0103</div>
+                            <div class="product-name">
+                                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                SALMÃO INTEIRO CONGELADO
+                            </div>
+                        </div>
+
+                        <div class="product-item" data-code="0104">
+                            <div class="product-code">0104</div>
+                            <div class="product-name">
+                                <button class="btn-edit"><i class="fas fa-edit"></i></button>
+                                CAMARÃO SEM CABEÇA (GRANEL/PACOTE)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para edição de produto -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>EDITAR PRODUTO</h2>
+            <form id="editForm">
+                <div class="form-group">
+                    <label for="editCodigo">CÓDIGO:</label>
+                    <input type="text" id="editCodigo" name="editCodigo" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="editNome">NOME DO PRODUTO:</label>
+                    <input type="text" id="editNome" name="editNome" required>
+                </div>
+                <div class="modal-actions">
+                    <button type="submit" class="btn-salvar-modal">SALVAR</button>
+                    <button type="button" class="btn-cancelar-modal">CANCELAR</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script-menu-navigation.js"></script>
+    <script src="script-mercadoria-cadastro-produto.js"></script>
+</body>
+</html>

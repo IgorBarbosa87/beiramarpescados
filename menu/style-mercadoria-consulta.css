@@ -1,0 +1,489 @@
+/* Importa os estilos base do novo-cliente para garantir a consistência do layout */
+@import url('style-novo-cliente.css');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 20px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.user-email {
+    font-size: 12px;
+    color: #777;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.menu-item a i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.menu-item:hover a {
+    background-color: #f5f5f5;
+}
+
+.menu-item.active > a {
+    background-color: #e0e0e0;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Submenu Styles */
+.submenu:hover {
+    list-style: none;
+    padding-left: 0;
+    background-color: #ffffff;
+}
+
+.submenu-item a {
+    transition: background-color 0.2s;
+    padding: 8px 15px 8px 45px;
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+
+.submenu-item:hover a {
+    background-color: #e0e0e0;
+}
+
+.submenu-item.active a {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.menu-item.expanded .submenu {
+    max-height: 200px;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+.menu-item.has-submenu > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submenu-toggle {
+    margin-left: auto;
+    font-size: 10px;
+    color: #555;
+    padding-right: 15px;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #0070A2;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo-placeholder {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.search-bar-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+}
+
+.icon-action {
+    font-size: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Page Content */
+.page-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Tabs Container */
+.tabs-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+}
+
+.tab {
+    flex: 1;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-right: 1px solid #ddd;
+}
+
+.tab:last-child {
+    border-right: none;
+}
+
+.tab.active {
+    background-color: #a0a0a0;
+    color: #fff;
+}
+
+.tab:hover:not(.active) {
+    background-color: #e0e0e0;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    background-color: #fff;
+    padding: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Table Container */
+.table-container {
+    padding: 20px;
+}
+
+.mercadoria-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+.mercadoria-table thead {
+    background-color: #a0a0a0;
+    color: #fff;
+}
+
+.mercadoria-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mercadoria-table th i {
+    margin-right: 5px;
+}
+
+.mercadoria-table tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s;
+}
+
+.mercadoria-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.mercadoria-table td {
+    padding: 12px 15px;
+    font-size: 13px;
+    color: #333;
+}
+
+.btn-detalhes, .btn-receber {
+    padding: 6px 15px;
+    background-color: #0070A2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-detalhes:hover, .btn-receber:hover {
+    background-color: #005a80;
+}
+
+.btn-receber {
+    /* Estilo específico para o botão RECEBER se necessário, mas por enquanto é o mesmo */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tabs-container {
+        flex-direction: column;
+    }
+    
+    .tab {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .tab:last-child {
+        border-bottom: none;
+    }
+    
+    .mercadoria-table {
+        font-size: 12px;
+    }
+    
+    .mercadoria-table th,
+    .mercadoria-table td {
+        padding: 8px 10px;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    position: relative;
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 10px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    -webkit-appearance: none; /* Remove default arrow in Chrome/Safari */
+    -moz-appearance: none; /* Remove default arrow in Firefox */
+    appearance: none; /* Remove default arrow */
+    /* Seta para baixo (cor cinza #aaa) */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23aaa%22%20d%3D%22M287%2069.4l-136.2%20136.2c-4.7%204.7-12.3%204.7-17%200L5.4%2069.4c-4.7-4.7-4.7-12.3%200-17s12.3-4.7%2017%200l127.8%20127.8%20127.8-127.8c4.7-4.7%2012.3-4.7%2017%200s4.7%2012.3%200%2017z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+}
+
+.btn-salvar {
+    width: 100%;
+    padding: 10px;
+    background-color: #0070A2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-salvar:hover {
+    background-color: #005a80;
+}
+
+/* Estilos para simular a seleção na imagem */
+.form-control option[value="inteiro"],
+.form-control option[value="caixaria"] {
+    /* Removendo a simulação de seleção que estava no CSS */
+    background-color: transparent; 
+    color: #333;
+}
+.form-control option:checked {
+    background-color: #0070A2;
+    color: white;
+}

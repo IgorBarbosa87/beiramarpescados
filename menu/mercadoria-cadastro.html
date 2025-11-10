@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - Cadastro de Mercadoria</title>
+    <link rel="stylesheet" href="style-mercadoria-cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="assets/perfilonlinejoao.png" alt="Avatar" class="avatar">
+                <div class="user-info">
+                    <div class="user-name">0001 - JOÃO</div>
+                    <div class="user-email">joao@gmail.com</div>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="menu-item"><a href="inicio.html"><i class="fas fa-home"></i> INÍCIO</a></li>
+
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-users"></i> CLIENTES<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-cliente.html">NOVO CLIENTE</a></li>
+                            <li class="submenu-item"><a href="consultar-clientes.html">CONSULTAR CLIENTES</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-box"></i> PEDIDOS<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-pedido.html">NOVO PEDIDO</a></li>
+                            <li class="submenu-item"><a href="consultar-pedidos.html">CONSULTAR PEDIDOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="estoque.html"><i class="fas fa-warehouse"></i> ESTOQUE</a></li>
+                    <li class="menu-item"><a href="painel-de-vendas.html"><i class="fas fa-chart-bar"></i> PAINEL DE VENDA</a></li>
+                    <li class="menu-item has-submenu expanded active">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-shopping-cart"></i> MERCADORIA<i class="fas fa-chevron-up submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="mercadoria-consulta.html">CONSULTA</a></li>
+                            <li class="submenu-item active"><a href="mercadoria-cadastro.html">CADASTRO DE MERCADORIA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro-produto.html">CADASTRO DE PRODUTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="avisos.html"><i class="fas fa-bell"></i> AVISOS</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="logo-placeholder">
+                    <img src="assets/peixetopbar.png">
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="BUSCAR">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <i class="fas fa-bell icon-action"></i>
+                    <i class="fas fa-cog icon-action"></i>
+                    <a href="#" class="logout-btn">SAIR</a>
+                </div>
+            </header>
+
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">MERCADORIA / CADASTRO DE MERCADORIA</div>
+
+                <!-- Form Container -->
+                <div class="form-container">
+                    <form id="cadastroMercadoriaForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="produto">PRODUTO</label>
+                                <select id="produto" name="produto" required>
+                                    <option value="">Selecione um produto</option>
+                                    <option value="tilapia">TILÁPIA INTEIRA CONGELADA</option>
+                                    <option value="lagosta">LAGOSTA (GRANEL)</option>
+                                    <option value="salmao">SALMÃO INTEIRO CONGELADO</option>
+                                    <option value="camarao">CAMARÃO SEM CABEÇA (GRANEL/PACOTE)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dataEntrega">DATA DA ENTREGA:</label>
+                                <input type="text" id="dataEntrega" name="dataEntrega" placeholder="DD/MM/AA" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group form-group-small">
+                                <label for="quantidade">QUANTIDADE:</label>
+                                <select id="quantidade" name="quantidade" required>
+                                    <option value="">-</option>
+                                    <option value="1">1</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="valor">VALOR:</label>
+                                <div class="input-with-prefix">
+                                    <span class="prefix">R$</span>
+                                    <input type="text" id="valor" name="valor" placeholder="0,00" required>
+                                </div>
+                            </div>
+
+                            <div class="form-actions-top">
+                                <button type="button" class="btn-adicionar" id="btnAdicionar">ADICIONAR</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Table -->
+                    <div class="table-container">
+                        <table class="mercadoria-table">
+                            <thead>
+                                <tr>
+                                    <th>PRODUTO</th>
+                                    <th>QUANTIDADE</th>
+                                    <th>PREÇO UNITÁRIO</th>
+                                    <th>TOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody id="mercadoriaTableBody">
+                                <!-- Linhas serão adicionadas dinamicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Bottom Action -->
+                    <div class="form-actions-bottom">
+                        <button type="button" class="btn-salvar" id="btnSalvar">SALVAR</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script-menu-navigation.js"></script>
+    <script src="script-mercadoria-cadastro.js"></script>
+</body>
+</html>

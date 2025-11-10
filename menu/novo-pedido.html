@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - Novo Pedido</title>
+    <link rel="stylesheet" href="style-novo-pedido.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar - Estrutura replicada -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="assets/perfilonlinejoao.png" alt="Avatar" class="avatar">
+                <div class="user-info">
+                    <div class="user-name">0001 - JOÃO</div>
+                    <div class="user-email">joao@gmail.com</div>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+
+                    <li class="menu-item"><a href="inicio.html"><i class="fas fa-home"></i> INÍCIO</a></li>
+
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-users"></i> CLIENTES<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-cliente.html">NOVO CLIENTE</a></li> 
+                            <li class="submenu-item"><a href="consultar-clientes.html">CONSULTAR CLIENTES</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu expanded active">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-box"></i> PEDIDOS<i class="fas fa-chevron-up submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item active"><a href="novo-pedido.html">NOVO PEDIDO</a></li>
+                            <li class="submenu-item"><a href="consultar-pedidos.html">CONSULTAR PEDIDOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="estoque.html"><i class="fas fa-warehouse"></i> ESTOQUE</a></li>
+                    <li class="menu-item"><a href="painel-de-vendas.html"><i class="fas fa-chart-bar"></i> PAINEL DE VENDA</a></li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-shopping-cart"></i> MERCADORIA<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="mercadoria-consulta.html">CONSULTA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro.html">CADASTRO DE MERCADORIA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro-produto.html">CADASTRO DE PRODUTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="avisos.html"><i class="fas fa-bell"></i> AVISOS</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content - Estrutura replicada -->
+        <main class="main-content">
+            <!-- Top Bar - Estrutura replicada -->
+            <header class="top-bar">
+                <div class="logo-placeholder">
+                    <img src="assets/peixetopbar.png"></i>
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="BUSCAR">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <i class="fas fa-bell icon-action"></i>
+                    <i class="fas fa-cog icon-action"></i>
+                    <a href="#" class="logout-btn">SAIR</a>
+                </div>
+            </header>
+
+            <!-- Page Content - Conteúdo da tela Novo Pedido -->
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">PEDIDOS / NOVO PEDIDO</div>
+
+                <!-- Container Principal de Novo Pedido -->
+                <div class="new-pedido-container">
+                    
+                    <!-- Formulário de Cabeçalho do Pedido -->
+                    <div class="pedido-header-form">
+                        <div class="form-group">
+                            <label for="cliente">SELECIONE O CLIENTE:</label>
+                            <select id="cliente" name="cliente">
+                                <option value="">Selecione o Cliente</option>
+                                <!-- Opções de cliente seriam carregadas via JS -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dataEntrega">DATA DA ENTREGA:</label>
+                            <input type="text" id="dataEntrega" name="dataEntrega" placeholder="DD/MM/AA">
+                        </div>
+                    </div>
+
+                    <!-- Formulário de Adição de Produto -->
+                    <div class="add-product-form">
+                        <div class="form-group">
+                            <label for="produto">SELECIONE PRODUTO:</label>
+                            <select id="produto" name="produto">
+                                <option value="">Selecione o Produto</option>
+                                <!-- Opções de produto seriam carregadas via JS -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="valor">VALOR:</label>
+                            <div class="input-rs">
+                                <span>R$</span>
+                                <input type="text" id="valor" name="valor">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantidade">QUANTIDADE:</label>
+                            <input type="number" id="quantidade" name="quantidade" value="1" min="1">
+                        </div>
+                        <button class="add-btn" id="addProductBtn">ADICIONAR</button>
+                    </div>
+
+                    <!-- Tabela de Produtos do Pedido -->
+                    <div class="products-table-section">
+                        <table class="products-table">
+                            <thead>
+                                <tr>
+                                    <th>PRODUTO</th>
+                                    <th>QUANTIDADE</th>
+                                    <th>PREÇO UNITÁRIO</th>
+                                    <th>TOTAL</th>
+                                    <th>AÇÃO</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productsTableBody">
+                                <!-- Produtos adicionados serão inseridos aqui via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Botão Salvar -->
+                    <div class="save-action">
+                        <button class="save-btn" id="saveOrderBtn">SALVAR</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script-novo-pedido.js"></script>
+    <script src="script-inicio.js"></script>
+</body>
+</html>

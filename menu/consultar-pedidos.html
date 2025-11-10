@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - Consultar Pedidos</title>
+    <link rel="stylesheet" href="style-consultar-pedidos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar - Estrutura replicada -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="assets/perfilonlinejoao.png" alt="Avatar" class="avatar">
+                <div class="user-info">
+                    <div class="user-name">0001 - JOÃO</div>
+                    <div class="user-email">joao@gmail.com</div>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+
+                    <li class="menu-item"><a href="inicio.html"><i class="fas fa-home"></i> INÍCIO</a></li>
+
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-users"></i> CLIENTES<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-cliente.html">NOVO CLIENTE</a></li> 
+                            <li class="submenu-item"><a href="consultar-clientes.html">CONSULTAR CLIENTES</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu expanded active">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-box"></i> PEDIDOS<i class="fas fa-chevron-up submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-pedido.html">NOVO PEDIDO</a></li>
+                            <li class="submenu-item active"><a href="consultar-pedidos.html">CONSULTAR PEDIDOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="estoque.html"><i class="fas fa-warehouse"></i> ESTOQUE</a></li>
+                    <li class="menu-item"><a href="painel-de-vendas.html"><i class="fas fa-chart-bar"></i> PAINEL DE VENDA</a></li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-shopping-cart"></i> MERCADORIA<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="mercadoria-consulta.html">CONSULTA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro.html">CADASTRO DE MERCADORIA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro-produto.html">CADASTRO DE PRODUTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="avisos.html"><i class="fas fa-bell"></i> AVISOS</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content - Estrutura replicada -->
+        <main class="main-content">
+            <!-- Top Bar - Estrutura replicada -->
+            <header class="top-bar">
+                <div class="logo-placeholder">
+                    <img src="assets/peixetopbar.png"></i>
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="BUSCAR">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <i class="fas fa-bell icon-action"></i>
+                    <i class="fas fa-cog icon-action"></i>
+                    <a href="#" class="logout-btn">SAIR</a>
+                </div>
+            </header>
+
+            <!-- Page Content - Conteúdo da tela Consultar Pedidos -->
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">PEDIDOS / CONSULTAR PEDIDOS</div>
+
+                <!-- Container Principal de Consulta -->
+                <div class="consult-pedidos-container">
+                    
+                    <!-- Área de Filtros e Ações -->
+                    <div class="filters-and-actions">
+                        <div class="filters-box">
+                            <h2 class="filters-title"><i class="fas fa-filter"></i> FILTROS</h2>
+                            
+                            <!-- Área de Filtros de Busca -->
+                            <div class="filters-grid">
+                                <div class="filter-group">
+                                    <label for="cliente">CLIENTE:</label>
+                                    <select id="cliente" name="cliente">
+                                        <option value="">Selecione o Cliente</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="segmento">SEGMENTO:</label>
+                                    <select id="segmento" name="segmento">
+                                        <option value="">Selecione o Segmento</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="status">STATUS:</label>
+                                    <select id="status" name="status">
+                                        <option value="">Selecione o Status</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="dataInicial">DATA INICIAL:</label>
+                                    <input type="text" id="dataInicial" name="dataInicial" placeholder="DD/MM/AA">
+                                </div>
+                                <div class="filter-group">
+                                    <label for="dataFinal">DATA FINAL:</label>
+                                    <input type="text" id="dataFinal" name="dataFinal" placeholder="DD/MM/AA">
+                                </div>
+                                <div class="filter-group">
+                                    <label for="valorMinimo">VALOR MÍNIMO:</label>
+                                    <div class="input-rs">
+                                        <span>R$</span>
+                                        <input type="text" id="valorMinimo" name="valorMinimo">
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="valorMaximo">VALOR MÁXIMO:</label>
+                                    <div class="input-rs">
+                                        <span>R$</span>
+                                        <input type="text" id="valorMaximo" name="valorMaximo">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="filter-actions">
+                                <button class="filter-btn">FILTRAR</button>
+                                <button class="clear-btn">LIMPAR FILTROS</button>
+                            </div>
+                        </div>
+
+                        <div class="new-pedido-box">
+                            <div class="icon-circle">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <button class="new-pedido-btn">+ NOVO PEDIDO</button>
+                        </div>
+                    </div>
+
+                    <!-- Tabela de Pedidos -->
+                    <div class="pedidos-table-section">
+                        <div class="pedidos-header-bar">
+                            <h2 class="pedidos-title"><i class="fas fa-box-open"></i> PEDIDOS</h2>
+                            <div class="export-area">
+                                <input type="checkbox" id="selectAllPedidos">
+                                <label for="selectAllPedidos">SELECIONAR TODOS OS OS PEDIDOS</label>
+                                <button class="export-btn"><i class="fas fa-file-export"></i> EXPORTAR</button>
+                            </div>
+                        </div>
+
+                        <!-- Área de Filtros de Busca da Tabela -->
+                        <div class="filters-bar-table">
+                            <div class="filter-group">
+                                <label for="orderByTable">ORDENAR POR: CÓDIGO/DATA</label>
+                                <select id="orderByTable" name="orderByTable">
+                                    <option value="codigo">Código</option>
+                                    <option value="data">Data</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label for="sortOrderTable">CRESCENTE/DECRESCENTE</label>
+                                <select id="sortOrderTable" name="sortOrderTable">
+                                    <option value="asc">Crescente</option>
+                                    <option value="desc">Decrescente</option>
+                                </select>
+                            </div>
+                            <div class="filter-group intelligent-search">
+                                <label for="intelligentSearchTable">BUSCA INTELIGENTE:</label>
+                                <input type="text" id="intelligentSearchTable" name="intelligentSearchTable" placeholder="">
+                                <button class="search-btn"><i class="fas fa-search"></i> BUSCAR</button>
+                            </div>
+                        </div>
+
+                        <div class="pedidos-table-container">
+                            <table class="pedidos-table">
+                                <thead>
+                                    <tr>
+                                        <th><i class="fas fa-box"></i> PEDIDO</th>
+                                        <th><i class="fas fa-calendar-alt"></i> DATA</th>
+                                        <th><i class="fas fa-flag"></i> STATUS</th>
+                                        <th><i class="fas fa-user"></i> CLIENTE</th>
+                                        <th><i class="fas fa-money-bill-wave"></i> TOTAL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Linhas de exemplo conforme a imagem -->
+                                    <tr>
+                                        <td>001</td>
+                                        <td>08/09/2025</td>
+                                        <td>FINALIZADO</td>
+                                        <td>ATACADO X</td>
+                                        <td>R$: 10.000,00</td>
+                                    </tr>
+                                    <!-- Mais pedidos seriam adicionados aqui via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script-consultar-pedidos.js"></script>
+    <script src="script-inicio.js"></script>
+</body>
+</html>

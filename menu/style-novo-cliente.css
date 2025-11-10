@@ -1,0 +1,339 @@
+/* Global Styles (Reutilizados do estilo anterior) */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 20px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.user-email {
+    font-size: 12px;
+    color: #777;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu-item {
+    margin-bottom: 5px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.menu-item a i {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.menu-item:hover a {
+    background-color: #f5f5f5;
+}
+
+.menu-item.active > a {
+    background-color: #e0e0e0;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Submenu Styles for CLIENTES */
+.submenu:hover {
+    list-style: none;
+    padding-left: 0;
+    background-color: #ffffff;
+}
+
+.submenu-item a {
+    transition: background-color 0.2s;
+    padding: 8px 15px 8px 45px;
+    font-size: 13px;
+    font-weight: normal;
+    display: block;
+}
+
+.submenu-item:hover a {
+    background-color: #e0e0e0;
+}
+
+.submenu-item.active a {
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+.menu-item.expanded .submenu {
+    max-height: 200px; /* Expande ao ter a classe 'expanded' */
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 0;
+    max-height: 0; /* Começa oculto */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+.menu-item.has-submenu > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.submenu-toggle {
+    margin-left: auto;
+    font-size: 10px;
+    color: #555;
+    padding-right: 15px;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #0070A2;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo-placeholder {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.search-bar-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+}
+
+.icon-action {
+    font-size: 18px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* Page Content */
+.page-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd; /* Linha sutil abaixo do breadcrumb */
+}
+
+/* New Client Form Specific Styles - Minimalist */
+.new-client-form-container-minimal {
+    background-color: #fff;
+    padding: 40px;
+    margin: 40px auto; /* Centraliza o formulário na área de conteúdo */
+    max-width: 900px; /* Largura máxima ajustada para acomodar novos campos */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-title-minimal {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group-minimal {
+    display: flex;
+    align-items: center; /* Alinha o label e o input verticalmente */
+    margin-bottom: 20px;
+}
+
+.form-group-minimal label {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    width: 120px; /* Largura fixa para os labels */
+    text-align: left;
+    padding-right: 20px;
+}
+
+.form-group-minimal input[type="text"],
+.form-group-minimal input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    flex-grow: 1; /* Faz o input ocupar o restante do espaço */
+}
+
+.form-group-minimal input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Ação do Formulário */
+.form-actions-minimal {
+    display: flex;
+    justify-content: center; /* Centraliza o botão */
+    margin-top: 40px;
+}
+
+.add-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #0070A2; /* Azul primário */
+    color: #fff;
+    transition: background-color 0.2s;
+    background: linear-gradient(to bottom, #0070A2, #0056b3); /* Gradiente para o botão */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.add-btn:hover {
+    background: linear-gradient(to bottom, #005a80, #004085);
+}
+
+/* Ajustes para CNPJ e Email que parecem ter largura total */
+.form-group-minimal:not(.form-group-half) input {
+    width: 100%;
+}
+
+/* Ajuste para o CNPJ, que na imagem parece ter a mesma largura do NOME e EMAIL */
+#cnpj {
+    max-width: none; /* Remove a limitação de largura se houver */
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    .new-client-form-container-minimal {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .form-group-minimal {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .form-group-minimal label {
+        width: 100%;
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 5px;
+    }
+    .form-group-minimal.form-group-half input {
+        max-width: 100%;
+    }
+}

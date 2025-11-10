@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - Consultar Clientes</title>
+    <link rel="stylesheet" href="style-consultar-clientes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar - Estrutura replicada -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="assets/perfilonlinejoao.png" alt="Avatar" class="avatar">
+                <div class="user-info">
+                    <div class="user-name">0001 - JOÃO</div>
+                    <div class="user-email">joao@gmail.com</div>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+
+                    <li class="menu-item"><a href="inicio.html"><i class="fas fa-home"></i> INÍCIO</a></li>
+
+                    <li class="menu-item has-submenu expanded active">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-users"></i> CLIENTES<i class="fas fa-chevron-up submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-cliente.html">NOVO CLIENTE</a></li> 
+                            <li class="submenu-item active"><a href="consultar-clientes.html">CONSULTAR CLIENTES</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-box"></i> PEDIDOS<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-pedido.html">NOVO PEDIDO</a></li>
+                            <li class="submenu-item"><a href="consultar-pedidos.html">CONSULTAR PEDIDOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="estoque.html"><i class="fas fa-warehouse"></i> ESTOQUE</a></li>
+                    <li class="menu-item"><a href="painel-de-vendas.html"><i class="fas fa-chart-bar"></i> PAINEL DE VENDA</a></li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-shopping-cart"></i> MERCADORIA<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="mercadoria-consulta.html">CONSULTA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro.html">CADASTRO DE MERCADORIA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro-produto.html">CADASTRO DE PRODUTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="avisos.html"><i class="fas fa-bell"></i> AVISOS</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content - Estrutura replicada -->
+        <main class="main-content">
+            <!-- Top Bar - Estrutura replicada -->
+            <header class="top-bar">
+                <div class="logo-placeholder">
+                    <img src="assets/peixetopbar.png"></i>
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="BUSCAR">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <i class="fas fa-bell icon-action"></i>
+                    <i class="fas fa-cog icon-action"></i>
+                    <a href="#" class="logout-btn">SAIR</a>
+                </div>
+            </header>
+
+            <!-- Page Content - Conteúdo da tela Consultar Clientes -->
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">INÍCIO / CLIENTES / CONSULTAR CLIENTES</div>
+
+                <!-- Container Principal de Consulta -->
+                <div class="consult-client-container">
+                    <!-- Área de Filtros e Ações -->
+                    <div class="search-actions-bar">
+                        <h2 class="search-title"><i class="fas fa-user-friends"></i> Buscar Clientes</h2>
+                        <div class="export-area">
+                            <input type="checkbox" id="selectAll">
+                            <label for="selectAll">SELECIONAR TODOS OS CLIENTES</label>
+                            <button class="export-btn"><i class="fas fa-file-export"></i> EXPORTAR</button>
+                        </div>
+                    </div>
+
+                    <!-- Área de Filtros de Busca -->
+                    <div class="filters-bar">
+                        <div class="filter-group">
+                            <label for="orderBy">ORDENAR POR: NOME</label>
+                            <select id="orderBy" name="orderBy">
+                                <option value="nome">Nome</option>
+                                <option value="email">E-mail</option>
+                                <option value="telefone">Telefone</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sortOrder">CRESCENTE/DECRESCENTE</label>
+                            <select id="sortOrder" name="sortOrder">
+                                <option value="asc">Crescente</option>
+                                <option value="desc">Decrescente</option>
+                            </select>
+                        </div>
+                        <div class="filter-group intelligent-search">
+                            <label for="intelligentSearch">BUSCA INTELIGENTE</label>
+                            <input type="text" id="intelligentSearch" name="intelligentSearch" placeholder="Nome, E-mail, Telefone ou CPF/CNPJ">
+                            <button class="search-btn"><i class="fas fa-search"></i> BUSCAR</button>
+                        </div>
+                    </div>
+
+                    <!-- Tabela de Clientes -->
+                    <div class="clients-table-container">
+                        <table class="clients-table">
+                            <thead>
+                                <tr>
+                                    <th>NOME</th>
+                                    <th>EMAIL</th>
+                                    <th>TELEFONE</th>
+                                    <th>CPF/CNPJ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Linhas de exemplo conforme a imagem -->
+                                <tr>
+                                    <td>João Pedro</td>
+                                    <td>joaopedro@gmail.com</td>
+                                    <td>(11)1111-1111</td>
+                                    <td>123.456.789-10</td>
+                                </tr>
+                                <tr>
+                                    <td>João Pedro</td>
+                                    <td>joaopedro@gmail.com</td>
+                                    <td>(11)1111-1111</td>
+                                    <td>123.456.789-10</td>
+                                </tr>
+                                <!-- Mais clientes seriam adicionados aqui via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script-consultar-clientes.js"></script>
+    <script src="script-inicio.js"></script>
+</body>
+</html>

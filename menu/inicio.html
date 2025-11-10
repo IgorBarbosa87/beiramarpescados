@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - Início</title>
+    <link rel="stylesheet" href="style-inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar - Estrutura replicada -->
+        <aside class="sidebar">
+            <div class="user-profile">
+                <img src="assets/perfilonlinejoao.png" alt="Avatar" class="avatar">
+                <div class="user-info">
+                    <div class="user-name">0001 - JOÃO</div>
+                    <div class="user-email">joao@gmail.com</div>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <!-- Item INICIO - Ativo -->
+                    <li class="menu-item active"><a href="inicio.html"><i class="fas fa-home"></i> INÍCIO</a></li>
+                    
+                    <!-- Menu CLIENTES -->
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-users"></i> CLIENTES<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-cliente.html">NOVO CLIENTE</a></li>
+                            <li class="submenu-item"><a href="consultar-clientes.html">CONSULTAR CLIENTES</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Outros itens de menu -->
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-box"></i> PEDIDOS<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="novo-pedido.html">NOVO PEDIDO</a></li>
+                            <li class="submenu-item"><a href="consultar-pedidos.html">CONSULTAR PEDIDOS</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="estoque.html"><i class="fas fa-warehouse"></i> ESTOQUE</a></li>
+                    <li class="menu-item"><a href="painel-de-vendas.html"><i class="fas fa-chart-bar"></i> PAINEL DE VENDA</a></li>
+                    <li class="menu-item has-submenu">
+                        <a href="#" class="submenu-toggle-link"><i class="fas fa-shopping-cart"></i> MERCADORIA<i class="fas fa-chevron-down submenu-toggle"></i></a>
+                        <ul class="submenu">
+                            <li class="submenu-item"><a href="mercadoria-consulta.html">CONSULTA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro.html">CADASTRO DE MERCADORIA</a></li>
+                            <li class="submenu-item"><a href="mercadoria-cadastro-produto.html">CADASTRO DE PRODUTO</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="avisos.html"><i class="fas fa-bell"></i> AVISOS</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content - Estrutura replicada -->
+        <main class="main-content">
+            <!-- Top Bar - Estrutura replicada -->
+            <header class="top-bar">
+                <div class="logo-placeholder">
+                    <img src="assets/peixetopbar.png"></i>
+                </div>
+                <div class="search-bar-container">
+                    <div class="search-bar">
+                        <input type="text" placeholder="BUSCAR">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="top-actions">
+                    <i class="fas fa-bell icon-action"></i>
+                    <i class="fas fa-cog icon-action"></i>
+                    <a href="#" class="logout-btn">SAIR</a>
+                </div>
+            </header>
+
+            <!-- Page Content - Conteúdo da tela INÍCIO (Dashboard) -->
+            <div class="page-content">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb">INÍCIO /</div>
+
+                <!-- Dashboard Grid/Layout -->
+                <div class="widgets-grid">
+                 <div class="vendposi">
+                    <!-- Widget 1: Vendas -->
+                    <div class="card sales-card">
+                        <div class="card-header">
+                            <h3 class="card-title">VENDAS</h3>
+                            <span class="tag monthly-tag">MENSAL</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="value">R$ 00,00</p>
+                            <a href="#" class="link-action">PEDIDOS <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                     
+                    <!-- Widget 2: Positivação -->
+                    <div class="card positive-card">
+                        <div class="card-header">
+                            <h3 class="card-title">POSITIVAÇÃO</h3>
+                            <span class="tag monthly-tag">MENSAL</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="value-small">22 CLIENTES</p>
+                            <a href="consultar-clientes.html" class="link-action">CLIENTES <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                 </div>
+                    <!-- Widget 3: Categorias (Gráfico de Rosca) -->
+                    <div class="card categories-card">
+                        <h3 class="card-title-large">CATEGORIAS</h3>
+                        <div class="chart-container">
+                            <!-- Canvas for the chart will be placed here by JavaScript -->
+                            <canvas id="categoryChart"></canvas>
+                            <div class="legend">
+                                <div class="legend-item"><span class="legend-color blue"></span> EM ANÁLISE</div>
+                                <div class="legend-item"><span class="legend-color green"></span> ENTREGUE</div>
+                                <div class="legend-item"><span class="legend-color red"></span> RUPTURA</div>
+                                <div class="legend-item"><span class="legend-color yellow"></span> EM PRODUÇÃO</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Chart.js library for the donut chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="script-inicio.js"></script>
+</body>
+</html>
