@@ -1,0 +1,404 @@
+/* Importa os estilos base do novo-cliente para garantir a consistência do layout */
+@import url('style-novo-cliente.css');
+
+/* Sobrescrita de estilos para a tela de Início (Dashboard) */
+
+/* Ajuste do Breadcrumb para a nova tela */
+.breadcrumb {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #A9A9A9; 
+}
+
+/* Estilo para o item INICIO no menu lateral */
+.menu-item.active a {
+    background-color: #e0e0e0;
+    color: black;
+    font-weight: bold;
+}
+
+/* Layout do Dashboard */
+.widgets-grid {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.vendposi {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 300px;
+}
+
+/* Estilo Base para os Cards */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-title-large {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: #0070A2;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.value-small {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.link-action {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0070A2;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-action:hover {
+    color: #005a80;
+}
+
+.link-action i {
+    margin-left: 5px;
+}
+
+/* Estilos Específicos para o Card de Categorias (Gráfico de Rosca) */
+.categories-card {
+    flex-grow: 1;
+    min-width: 400px; /* Ajuste para o tamanho do gráfico */
+}
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+#categoryChart {
+    max-width: 250px; /* Tamanho do canvas */
+    max-height: 250px;
+}
+
+/* Legenda do Chart.js */
+.legend {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+/* Cores da legenda */
+.legend-color.blue { background-color: #3498db; } /* EM ANÁLISE */
+.legend-color.green { background-color: #2ecc71; } /* ENTREGUE */
+.legend-color.red { background-color: #e74c3c; } /* RUPTURA */
+.legend-color.yellow { background-color: #f1c40f; } /* EM PRODUÇÃO */
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .widgets-grid {
+        flex-direction: column;
+    }
+
+    .vendposi {
+        min-width: 100%;
+    }
+
+    .categories-card {
+        min-width: 100%;
+    }
+
+    .chart-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+/* Estilos para a página de Avisos */
+.content-wrapper {
+    padding: 20px;
+}
+
+.avisos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avisos-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-novo-aviso {
+    background-color: #0070A2;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-novo-aviso:hover {
+    background-color: #005a80;
+}
+
+/* Estilo dos cards de aviso */
+.aviso-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-left: 4px solid #0070A2;
+}
+
+.aviso-card.alta {
+    border-left-color: #e74c3c;
+}
+
+.aviso-card.media {
+    border-left-color: #f1c40f;
+}
+
+.aviso-card.baixa {
+    border-left-color: #2ecc71;
+}
+
+.aviso-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.aviso-titulo {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+.aviso-prioridade {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+}
+
+.prioridade-alta {
+    background-color: #e74c3c;
+}
+
+.prioridade-media {
+    background-color: #f1c40f;
+    color: #333;
+}
+
+.prioridade-baixa {
+    background-color: #2ecc71;
+}
+
+.aviso-mensagem {
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.aviso-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #777;
+}
+
+.aviso-acoes button {
+    background: none;
+    border: none;
+    color: #0070A2;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.aviso-acoes button:hover {
+    text-decoration: underline;
+}
+
+/* Estilos do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.close {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancelar {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-salvar {
+    background-color: #0070A2;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-salvar:hover {
+    background-color: #005a80;
+}
+
+.sem-avisos {
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+
+.sem-avisos i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #ddd;
+}
