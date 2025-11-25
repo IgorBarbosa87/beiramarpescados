@@ -1,0 +1,135 @@
+body {
+    background-color: #0070A2;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.botao-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 80px 20px 40px;
+    margin-top: 40px;
+}
+
+.logo {
+    margin-bottom: 40px;
+}
+
+.logo img {
+    width: 300px;
+    height: auto;
+    max-width: 100%;
+}
+
+.instrucoes {
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.texto-destaque {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+}
+
+.texto-normal {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form-codigo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campo-codigo {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.campo-codigo label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 45px;
+    padding: 0 15px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: white;
+    color: rgb(6, 6, 6);
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+button[type="submit"] {
+    width: 100%;
+    max-width: 350px;
+    height: 45px;
+    background-color: #1E4D63;
+    color: #dce2e6;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 60px 15px 30px;
+    }
+    
+    .logo img {
+        width: 250px;
+    }
+    
+    .texto-destaque {
+        font-size: 14px;
+    }
+    
+    .texto-normal {
+        font-size: 13px;
+    }
+}
